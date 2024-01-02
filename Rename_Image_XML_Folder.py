@@ -8,7 +8,7 @@ def rename_files(dataset_dir, start_index):
     images_dir = os.path.join(dataset_dir, 'JPEGImages')
 
     jpg_files = sorted(os.listdir(images_dir))
-    for i, jpg_file in enumerate(tqdm(jpg_files, desc="Renaming files"), start=start_index):
+    for i, jpg_file in enumerate(tqdm(jpg_files, desc="Renaming files")):
         xml_file = os.path.splitext(jpg_file)[0] + '.xml'
         xml_path = os.path.join(annotations_dir, xml_file)
         if not os.path.exists(xml_path):
